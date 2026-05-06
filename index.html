@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catnalytics — 고양이 건강의 골든타임을 지키는 IoT 펫 헬스케어</title>
+<title>Catnalytics</title>
+<link rel="icon" type="image/x-icon" href="logo.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -283,6 +284,7 @@
     color: var(--text-muted);
     max-width: 540px;
     line-height: 1.8;
+    word-break: keep-all;
   }
 
   /* DIVIDER */
@@ -380,6 +382,25 @@
     font-size: 13px;
     color: var(--text-dim);
     line-height: 1.6;
+  }
+
+  .flow-card {
+    width: 184px;
+    min-height: 132px;
+    padding: 20px 16px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 1.35;
+    word-break: keep-all;
+  }
+
+  .flow-card [data-lang] {
+    max-width: 100%;
+    line-height: 1.35;
+    white-space: normal;
   }
 
   .features-visual {
@@ -778,18 +799,109 @@
   .footer-links a:hover { color: var(--teal); }
 
   /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .flow-diagram {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 184px));
+      justify-content: center !important;
+      gap: 12px !important;
+    }
+    .flow-arrow { display: none !important; }
+    .features-layout { grid-template-columns: 1fr; }
+    .features-visual { display: none; }
+  }
+
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
+    nav {
+      height: 60px;
+      padding: 0 20px;
+    }
     .nav-links { display: none; }
+    .nav-right { gap: 16px; }
+    .nav-logo-text { font-size: 17px; }
     section { padding: 64px 20px; }
-    .hero { padding: 100px 20px 64px; }
+    .hero {
+      min-height: auto;
+      padding: 96px 20px 64px;
+    }
+    .hero-logo {
+      width: 80px !important;
+      height: 80px !important;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-size: clamp(46px, 14vw, 64px);
+      line-height: 1;
+    }
+    .hero-sub-title {
+      max-width: 320px;
+      line-height: 1.55;
+    }
+    .hero-desc {
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 1.75;
+      word-break: keep-all;
+    }
     .problem-grid { grid-template-columns: 1fr; }
+    .problem-card { padding: 28px 24px; }
+    .problem-pct { font-size: 46px; }
+    .section-desc {
+      max-width: 100% !important;
+      font-size: 14px;
+      word-break: keep-all;
+    }
+    .flow-diagram {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px !important;
+      margin: 36px 0 !important;
+    }
+    .flow-arrow { display: none !important; }
+    .flow-card {
+      width: 100%;
+      min-width: 0 !important;
+      min-height: 126px;
+      padding: 18px 12px !important;
+      border-radius: 12px !important;
+    }
     .features-layout { grid-template-columns: 1fr; }
     .features-visual { display: none; }
     .products-grid { grid-template-columns: repeat(2, 1fr); }
     .about-grid { grid-template-columns: 1fr; }
-    footer { padding: 32px 20px; }
-    .hero-stats { gap: 28px; }
+    footer {
+      align-items: flex-start;
+      padding: 32px 20px;
+      flex-direction: column;
+    }
+    .footer-links {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .hero-stats {
+      gap: 24px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .hero-badge { margin-bottom: 24px; }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .hero-stat-label {
+      font-size: 10px;
+      line-height: 1.45;
+    }
+    .flow-diagram { grid-template-columns: 1fr; }
+    .flow-card {
+      min-height: 112px;
+      padding: 18px 16px !important;
+    }
+    .products-grid { grid-template-columns: 1fr; }
+    .product-card { padding: 24px 20px; }
   }
 
   /* ANIMATIONS */
@@ -885,27 +997,27 @@
   <p class="section-tag" data-lang="kr">// 문제 인식</p>
   <p class="section-tag" data-lang="en">// Problem</p>
   <h2 class="section-title">
-    <span data-lang="kr"><span class="kr">골든타임을 놓치고 있다</span></span>
+    <span data-lang="kr"><span class="kr">조용히 지나가는 골든타임</span></span>
     <span data-lang="en">Missing the Golden Hour</span>
   </h2>
-  <p class="section-desc">
-    <span data-lang="kr">고양이는 아픔을 숨깁니다. 증상이 눈에 보일 때는 이미 병이 상당히 진행된 상태입니다. 특히 다묘 가정에서는 개별 행동 변화 추적이 더욱 어렵습니다.</span>
+  <p class="section-desc" style="max-width:860px;">
+    <span data-lang="kr">고양이는 아픔을 잘 숨깁니다. 보호자가 증상을 알아챘을 때는 이미 늦은 경우가 많습니다.<br>특히 다묘 가정에서는 개별 행동 변화 추적이 더욱 어렵습니다.</span>
     <span data-lang="en">Cats hide their pain. By the time symptoms are visible, the disease has already progressed. Tracking individual behavioral changes is especially difficult in multi-cat households.</span>
   </p>
   <div class="problem-grid">
     <div class="problem-card">
       <div class="problem-pct">68%</div>
-      <div class="problem-text" data-lang="kr">고양이별 식사량을 파악하기 어렵거나 전혀 모름</div>
+      <div class="problem-text" data-lang="kr">고양이별 식사량을<br>파악하기 어렵거나 전혀 모름</div>
       <div class="problem-text" data-lang="en">can't track individual food intake per cat</div>
     </div>
     <div class="problem-card">
       <div class="problem-pct">78%</div>
-      <div class="problem-text" data-lang="kr">고양이별 배변 여부를 정확히 파악하기 어렵거나 전혀 모름</div>
+      <div class="problem-text" data-lang="kr">고양이별 배변 여부를<br>정확히 파악하기 어렵거나 전혀 모름</div>
       <div class="problem-text" data-lang="en">uncertain about individual litter box usage</div>
     </div>
     <div class="problem-card">
       <div class="problem-pct">82%</div>
-      <div class="problem-text" data-lang="kr">이상 징후를 늦게 발견한 경험이 있음</div>
+      <div class="problem-text" data-lang="kr">고양이의 건강 이상 징후를<br>늦게 발견한 경험이 있음</div>
       <div class="problem-text" data-lang="en">have missed early warning signs of illness</div>
     </div>
   </div>
@@ -922,49 +1034,49 @@
     <span data-lang="en">Data, Not Guesswork, Protects Your Cat</span>
   </h2>
   <p class="section-desc" style="max-width:680px;">
-    <span data-lang="kr">목걸이가 고양이를 식별하고, 패드가 지표를 수집하고, 앱이 이상을 감지합니다.</span>
+    <span data-lang="kr">목걸이가 고양이를 구분하고, 패드가 건강 데이터를 모으고, 앱이 이상 변화를 알려줍니다.</span>
     <span data-lang="en">The collar identifies each cat. The pad collects data. The app detects anomalies.</span>
   </p>
 
   <!-- Flow diagram -->
-  <div style="display:flex;align-items:center;justify-content:center;gap:0;margin:48px 0;flex-wrap:wrap;">
-    <div style="text-align:center;padding:24px 28px;background:var(--bg3);border:1px solid var(--border-teal);border-radius:16px;min-width:140px;">
+  <div class="flow-diagram" style="display:flex;align-items:center;justify-content:center;gap:0;margin:48px 0;flex-wrap:wrap;">
+    <div class="flow-card" style="text-align:center;padding:24px 28px;background:var(--bg3);border:1px solid var(--border-teal);border-radius:16px;min-width:140px;">
       <div style="margin-bottom:10px;display:flex;justify-content:center;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/><circle cx="18" cy="6" r="2" fill="#1FDADB" stroke="none"/></svg>
       </div>
       <div style="font-size:13px;font-weight:600;color:var(--teal);" data-lang="kr">BLE 목걸이</div>
       <div style="font-size:13px;font-weight:600;color:var(--teal);" data-lang="en">BLE Collar</div>
-      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="kr">개체 자동 식별</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="kr">고양이 자동 식별</div>
       <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="en">Auto ID per cat</div>
     </div>
-    <div style="font-size:24px;color:var(--teal);padding:0 12px;">→</div>
-    <div style="text-align:center;padding:24px 28px;background:var(--bg3);border:1px solid var(--border-teal);border-radius:16px;min-width:140px;">
+    <div class="flow-arrow" style="font-size:24px;color:var(--teal);padding:0 12px;">→</div>
+    <div class="flow-card" style="text-align:center;padding:24px 28px;background:var(--bg3);border:1px solid var(--border-teal);border-radius:16px;min-width:140px;">
       <div style="margin-bottom:10px;display:flex;justify-content:center;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><rect x="2" y="14" width="20" height="6" rx="2"/><path d="M6 14V8a6 6 0 0 1 12 0v6"/><line x1="12" y1="14" x2="12" y2="20"/></svg>
       </div>
       <div style="font-size:13px;font-weight:600;color:var(--teal);" data-lang="kr">IoT 패드</div>
       <div style="font-size:13px;font-weight:600;color:var(--teal);" data-lang="en">IoT Pad</div>
       <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="kr">식사·음수·체중·배변 수집</div>
-      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="en">Food·Water·Weight·Litter</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="en">Food · Water<br>Weight · Litter</div>
     </div>
-    <div style="font-size:24px;color:var(--teal);padding:0 12px;">→</div>
-    <div style="text-align:center;padding:24px 28px;background:var(--bg3);border:1px solid var(--border-teal);border-radius:16px;min-width:140px;">
+    <div class="flow-arrow" style="font-size:24px;color:var(--teal);padding:0 12px;">→</div>
+    <div class="flow-card" style="text-align:center;padding:24px 28px;background:var(--bg3);border:1px solid var(--border-teal);border-radius:16px;min-width:140px;">
       <div style="margin-bottom:10px;display:flex;justify-content:center;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </div>
       <div style="font-size:13px;font-weight:600;color:var(--teal);" data-lang="kr">패턴 분석</div>
       <div style="font-size:13px;font-weight:600;color:var(--teal);" data-lang="en">Pattern Analysis</div>
-      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="kr">평소 패턴 기반 편차 감지</div>
-      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="en">Deviation from personal baseline</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="kr">평소 패턴 기반<br>편차 감지</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="en">Deviation from<br>personal baseline</div>
     </div>
-    <div style="font-size:24px;color:var(--teal);padding:0 12px;">→</div>
-    <div style="text-align:center;padding:24px 28px;background:var(--bg3);border:1px solid rgba(226,75,74,0.4);border-radius:16px;min-width:140px;">
+    <div class="flow-arrow" style="font-size:24px;color:var(--teal);padding:0 12px;">→</div>
+    <div class="flow-card" style="text-align:center;padding:24px 28px;background:var(--bg3);border:1px solid rgba(226,75,74,0.4);border-radius:16px;min-width:140px;">
       <div style="margin-bottom:10px;display:flex;justify-content:center;">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E24B4A" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
       </div>
       <div style="font-size:13px;font-weight:600;color:#F09595;" data-lang="kr">이상 감지 알림</div>
       <div style="font-size:13px;font-weight:600;color:#F09595;" data-lang="en">Anomaly Alert</div>
-      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="kr">골든타임 내 앱 푸시</div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="kr">이상 징후 즉시 알림</div>
       <div style="font-size:12px;color:var(--text-muted);margin-top:4px;" data-lang="en">Timely push alerts</div>
     </div>
   </div>
@@ -976,7 +1088,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
         </div>
         <div>
-          <div class="feature-name" data-lang="kr">개체 자동 식별 (BLE 목걸이)</div>
+          <div class="feature-name" data-lang="kr">고양이 자동 식별 (BLE 목걸이)</div>
           <div class="feature-name" data-lang="en">Auto ID via BLE Collar</div>
           <div class="feature-desc" data-lang="kr">고양이마다 고유한 BLE ID를 가진 목걸이 태그를 착용합니다. 패드에 접근하는 순간 어떤 고양이인지 자동으로 식별하여 개체별 데이터를 정확하게 분리합니다.</div>
           <div class="feature-desc" data-lang="en">Each cat wears a collar tag with a unique BLE ID. The moment they approach a pad, the system auto-identifies the cat and records data per individual.</div>
@@ -987,9 +1099,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M12 14V7"/><path d="M7 7h10"/><path d="M5 7a7 7 0 0 1 14 0"/></svg>
         </div>
         <div>
-          <div class="feature-name" data-lang="kr">4대 건강지표 자동 수집 (IoT 패드)</div>
+          <div class="feature-name" data-lang="kr">주요 생활 데이터 자동 수집 (IoT 패드)</div>
           <div class="feature-name" data-lang="en">4-Indicator Auto Collection (IoT Pad)</div>
-          <div class="feature-desc" data-lang="kr">식기 아래 급식·급수 패드, 화장실 아래 배변 패드를 설치하면 식사량·음수량·체중·배변을 24시간 자동으로 수집합니다. 기존 식기와 화장실을 그대로 사용할 수 있습니다.</div>
+          <div class="feature-desc" data-lang="kr">식기와 화장실 아래에 무게 패드를 설치하면 식사량·음수량·체중·배변 데이터를 24시간 자동으로 수집합니다. 기존 식기와 화장실을 그대로 사용할 수 있습니다.</div>
           <div class="feature-desc" data-lang="en">Place a pad under food/water bowls and another under the litter box. Food, water, weight, and litter are collected 24/7 automatically — no need to replace existing items.</div>
         </div>
       </div>
@@ -998,9 +1110,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
         </div>
         <div>
-          <div class="feature-name" data-lang="kr">개체별 편차 기반 이상 감지</div>
+          <div class="feature-name" data-lang="kr">고양이별 패턴 기반 이상 감지</div>
           <div class="feature-name" data-lang="en">Deviation-Based Anomaly Detection</div>
-          <div class="feature-desc" data-lang="kr">절대적인 수치가 아닌 각 고양이의 평소 패턴을 기준으로 편차를 감지합니다. 식사량이 3일 연속 감소하거나 배변 횟수에 이상이 생기면 즉시 앱 알림으로 알려드립니다.</div>
+          <div class="feature-desc" data-lang="kr">단순한 평균값이 아니라, 각 고양이마다 평소 패턴에서 벗어나는 변화를 감지합니다. 식사량이 3일 연속 감소하거나 배변 횟수에 이상이 생기면 즉시 앱 알림으로 알려드립니다.</div>
           <div class="feature-desc" data-lang="en">Anomalies are detected against each cat's personal baseline — not population averages. If food intake drops 3 days in a row or litter usage changes, you get an immediate push alert.</div>
         </div>
       </div>
@@ -1146,8 +1258,8 @@
         <li data-lang="en">Place under existing bowls</li>
         <li data-lang="kr">식사량·음수량 자동 수집</li>
         <li data-lang="en">Auto-tracks food & water intake</li>
-        <li data-lang="kr">WiFi → Firebase 실시간 전송</li>
-        <li data-lang="en">WiFi → Firebase real-time sync</li>
+        <li data-lang="kr">이벤트 후 실시간 확인 가능</li>
+        <li data-lang="en">Real-time updates after each event</li>
       </ul>
     </div>
     <div class="product-card">
@@ -1211,8 +1323,6 @@
       <ul class="product-features">
         <li data-lang="kr">이번 주/달 상태 요약 및 추이 분석</li>
         <li data-lang="en">Weekly/monthly status summary & trend analysis</li>
-        <li data-lang="kr">AI 인사이트 및 수의사 상담 권장</li>
-        <li data-lang="en">AI insights with vet consult recommendations</li>
         <li data-lang="kr">병원 방문 시 데이터 공유 가능</li>
         <li data-lang="en">Shareable with your veterinarian</li>
       </ul>
@@ -1228,7 +1338,7 @@
   <p class="section-tag" data-lang="en">// Our Vision</p>
   <h2 class="section-title">
     <span data-lang="kr"><span class="kr">문제를 가장 잘 아는 사람이 직접 만든다</span></span>
-    <span data-lang="en">Built by someone who knows the problem firsthand</span>
+    <span data-lang="en">Built from lived experience</span>
   </h2>
   <div class="about-grid">
     <div>
@@ -1236,7 +1346,7 @@
         <span data-lang="kr"><span class="kr">고양이 건강 관리를 '감'에서<br>'데이터 기반 예측'으로</span></span>
         <span data-lang="en">From gut feeling to<br>data-driven prediction</span>
       </div>
-      <p class="about-text" data-lang="kr">모든 보호자가 골든타임을 놓치지 않는 세상을 만들고자 합니다. 고양이가 아픔을 숨기기 전에, 데이터가 먼저 말해줄 수 있도록. IoT 기기부터 앱까지 핵심 기술 스택을 직접 개발하고 있습니다.</p>
+      <p class="about-text" data-lang="kr">모든 고양이 보호자가 골든타임을 놓치지 않는 세상을 만들고자 합니다. Catnalytics는 고양이의 일상 데이터를 기반으로 건강 이상을 더 빠르게 발견하는 것을 목표로 합니다. IoT 기기부터 앱까지 핵심 기술 스택을 직접 개발하고 있습니다.</p>
       <p class="about-text" data-lang="en">We want a world where no guardian misses the golden hour. Where data speaks before a cat has to hide its pain. Building every layer of the stack in-house — firmware, BLE, cloud, and app.</p>
       <div class="about-tags">
         <span class="about-tag">IoT / BLE</span>
