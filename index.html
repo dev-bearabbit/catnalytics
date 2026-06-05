@@ -217,7 +217,41 @@
     font-size: 15px;
     color: var(--text-muted);
     line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
     margin-bottom: 48px;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 0.5px solid var(--border-teal);
+    border-radius: 8px;
+    background: var(--teal-glow);
+    color: var(--teal-light);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: transform 0.2s, border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+
+  .hero-cta:hover {
+    border-color: var(--teal);
+    background: rgba(31,218,219,0.14);
+    color: var(--teal);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 36px rgba(31,218,219,0.18);
   }
 
   .hero-stats {
@@ -634,6 +668,250 @@
     font-size: 10px;
   }
 
+  /* CONTACT */
+  .contact-section {
+    max-width: 1100px;
+  }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+    gap: 56px;
+    align-items: start;
+    margin-top: 48px;
+  }
+
+  .contact-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .contact-points li {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+
+  .contact-points li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 14px rgba(31,218,219,0.55);
+    flex: 0 0 auto;
+    margin-top: 9px;
+  }
+
+  .contact-form {
+    background: var(--bg2);
+    border: 0.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--teal), transparent);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .form-field.full { grid-column: 1 / -1; }
+
+  .form-field label {
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--teal-light);
+    letter-spacing: 0.04em;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans-kr);
+    font-size: 14px;
+    padding: 12px 13px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+
+  .form-field select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--teal) 50%), linear-gradient(135deg, var(--teal) 50%, transparent 50%);
+    background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+  }
+
+  .form-field textarea {
+    min-height: 112px;
+    resize: vertical;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--border-teal);
+    box-shadow: 0 0 0 3px var(--teal-glow);
+    background: #070707;
+  }
+
+  .contact-submit {
+    width: 100%;
+    margin-top: 18px;
+    border: 0.5px solid var(--border-teal);
+    border-radius: 8px;
+    background: var(--teal-glow);
+    color: var(--teal-light);
+    cursor: pointer;
+    font-family: var(--sans-kr);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 18px;
+    transition: transform 0.2s, border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-submit:hover {
+    border-color: var(--teal);
+    background: rgba(31,218,219,0.14);
+    color: var(--teal);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 36px rgba(31,218,219,0.18);
+  }
+
+  .contact-submit:disabled {
+    cursor: wait;
+    opacity: 0.72;
+    transform: none;
+  }
+
+  .contact-note {
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    word-break: keep-all;
+  }
+
+  .success-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0,0,0,0.68);
+    backdrop-filter: blur(10px);
+  }
+
+  .success-modal.visible {
+    display: flex;
+  }
+
+  .success-dialog {
+    width: min(420px, 100%);
+    border: 0.5px solid var(--border-teal);
+    border-radius: 16px;
+    background: var(--bg2);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.44), 0 0 42px rgba(31,218,219,0.08);
+    padding: 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: modalIn 0.22s ease both;
+  }
+
+  .success-dialog::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  }
+
+  .success-icon {
+    width: 44px;
+    height: 44px;
+    border: 0.5px solid var(--border-teal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    color: var(--teal);
+    background: var(--teal-glow);
+  }
+
+  .success-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+
+  .success-message {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+
+  .success-close {
+    width: 100%;
+    margin-top: 22px;
+    border: 0.5px solid var(--border-teal);
+    border-radius: 8px;
+    background: var(--teal-glow);
+    color: var(--teal-light);
+    cursor: pointer;
+    font-family: var(--sans-kr);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 12px 16px;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+
+  .success-close:hover {
+    border-color: var(--teal);
+    background: rgba(31,218,219,0.14);
+    color: var(--teal);
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
   /* ABOUT */
   .about-grid {
     display: block;
@@ -867,7 +1145,9 @@
     }
     .features-layout { grid-template-columns: 1fr; }
     .features-visual { display: none; }
-    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-layout { grid-template-columns: 1fr; }
+    .products-grid,
+    .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
     .about-grid { grid-template-columns: 1fr; }
     footer {
       align-items: flex-start;
@@ -900,8 +1180,11 @@
       min-height: 112px;
       padding: 18px 16px !important;
     }
-    .products-grid { grid-template-columns: 1fr; }
+    .products-grid,
+    .products-grid-4 { grid-template-columns: 1fr; }
     .product-card { padding: 24px 20px; }
+    .contact-form { padding: 24px 20px; }
+    .form-grid { grid-template-columns: 1fr; }
   }
 
   /* ANIMATIONS */
@@ -918,13 +1201,15 @@
   .hero-title { animation-delay: 0.3s; }
   .hero-sub-title { animation-delay: 0.35s; }
   .hero-desc { animation-delay: 0.4s; }
+  .hero-actions { animation-delay: 0.45s; }
   .hero-stats { animation-delay: 0.5s; }
 
   /* LANG */
-  [data-lang="en"] { display: none; }
-  body.lang-en [data-lang="kr"] { display: none; }
-  body.lang-en [data-lang="en"] { display: revert; }
-  body.lang-en .section-title .kr { display: none; }
+  [data-lang="en"] { display: none !important; }
+  body.lang-en [data-lang="kr"] { display: none !important; }
+  body.lang-en [data-lang="en"] { display: revert !important; }
+  body.lang-en .section-title .kr { display: none !important; }
+  body.lang-en .contact-points li[data-lang="en"] { display: flex !important; }
 </style>
 </head>
 <body>
@@ -939,6 +1224,7 @@
       <li><a href="#features" data-lang="kr">기능</a><a href="#features" data-lang="en">Features</a></li>
       <li><a href="#product" data-lang="kr">제품</a><a href="#product" data-lang="en">Product</a></li>
       <li><a href="#about" data-lang="kr">소개</a><a href="#about" data-lang="en">About</a></li>
+      <li><a href="#contact" data-lang="kr">대기 등록</a><a href="#contact" data-lang="en">Join Waitlist</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="setLang('kr')">KR</button>
@@ -965,6 +1251,12 @@
     <span data-lang="kr">식사량, 음수량, 체중, 배변처럼 건강 이상을 가장 먼저 보여주는 지표를 IoT 기기로 자동 수집합니다.<br>고양이별 패턴 변화를 분석해 다묘 가정에서도 이상 징후를 더 빠르게 알아차릴 수 있습니다.</span>
     <span data-lang="en">Automatically collects the signals that often reveal health changes first: food intake, water intake, weight, and litter box usage. Analyzes each cat's pattern changes so multi-cat households can notice warning signs sooner.</span>
   </p>
+  <div class="hero-actions">
+    <a class="hero-cta" href="#contact">
+      <span data-lang="kr">출시 알림 신청하기</span>
+      <span data-lang="en">Join the Waitlist</span>
+    </a>
+  </div>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="hero-stat-num">
@@ -1231,7 +1523,7 @@
     <span data-lang="kr">기존 식기와 화장실을 그대로 사용할 수 있습니다. 패드 아래에 설치하기만 하면 됩니다.</span>
     <span data-lang="en">Works with your existing bowls and litter box. Just place the pad underneath.</span>
   </p>
-  <div class="products-grid">
+  <div class="products-grid-4">
     <div class="product-card">
       <div class="product-icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
@@ -1258,8 +1550,8 @@
         <li data-lang="en">Place under existing bowls</li>
         <li data-lang="kr">식사량·음수량 자동 수집</li>
         <li data-lang="en">Auto-tracks food & water intake</li>
-        <li data-lang="kr">이벤트 후 실시간 확인 가능</li>
-        <li data-lang="en">Real-time updates after each event</li>
+        <li data-lang="kr">개체 식별 후 데이터 저장</li>
+        <li data-lang="en">Stores data after cat identification</li>
       </ul>
     </div>
     <div class="product-card">
@@ -1277,6 +1569,21 @@
         <li data-lang="en">Records immediately after use</li>
       </ul>
     </div>
+    <div class="product-card">
+      <div class="product-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><rect x="4" y="6" width="16" height="12" rx="3"/><path d="M8 10h.01M12 10h.01M16 10h.01"/><path d="M9 18v2M15 18v2"/><path d="M7 3l2 3M17 3l-2 3"/></svg>
+      </div>
+      <div class="product-name" data-lang="kr">중앙 허브</div>
+      <div class="product-name" data-lang="en">Central Hub</div>
+      <ul class="product-features">
+        <li data-lang="kr">목걸이와 패드 데이터 수신</li>
+        <li data-lang="en">Receives collar and pad data</li>
+        <li data-lang="kr">고양이별 이벤트 매칭</li>
+        <li data-lang="en">Matches events to each cat</li>
+        <li data-lang="kr">앱·클라우드로 데이터 전송</li>
+        <li data-lang="en">Sends data to app and cloud</li>
+      </ul>
+    </div>
   </div>
 
   <h2 class="section-title" style="margin-top:48px;margin-bottom:48px;">
@@ -1287,7 +1594,7 @@
     <span data-lang="kr">고양이별 건강 데이터를 한눈에 확인하고, 이상 징후 알림과 주간·월간 리포트를 받아볼 수 있습니다.</span>
     <span data-lang="en">View each cat's health data at a glance, receive anomaly alerts, and review weekly and monthly reports.</span>
   </p>
-  <div class="products-grid">
+  <div class="products-grid-4">
     <div class="product-card">
       <div class="product-icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
@@ -1299,6 +1606,19 @@
         <li data-lang="en">Per-cat daily food, water & litter status</li>
         <li data-lang="kr">이상 감지 시 즉시 푸시 알림</li>
         <li data-lang="en">Instant push alert on anomaly detection</li>
+      </ul>
+    </div>
+    <div class="product-card">
+      <div class="product-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FDADB" stroke-width="1.5"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/><path d="M14 20v-.5a4 4 0 0 1 5-3.87"/></svg>
+      </div>
+      <div class="product-name" data-lang="kr">고양이별 프로필 관리</div>
+      <div class="product-name" data-lang="en">Per-Cat Profile Management</div>
+      <ul class="product-features">
+        <li data-lang="kr">다묘 가정의 개체별 데이터 분리</li>
+        <li data-lang="en">Separates data for multi-cat homes</li>
+        <li data-lang="kr">나이·체중·특이사항 관리</li>
+        <li data-lang="en">Manages age, weight, and notes</li>
       </ul>
     </div>
     <div class="product-card">
@@ -1364,6 +1684,104 @@
 
 <div class="divider"></div>
 
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <p class="section-tag" data-lang="kr">// 사전 연락처 등록</p>
+  <p class="section-tag" data-lang="en">// Early Access</p>
+  <h2 class="section-title">
+    <span data-lang="kr"><span class="kr">출시 소식을 가장 먼저 받아보세요</span></span>
+    <span data-lang="en">Be First to Hear About Launch</span>
+  </h2>
+
+  <div class="contact-layout">
+    <div>
+      <p class="section-desc" style="max-width:480px;">
+        <span data-lang="kr">Catnalytics는 현재 프로토타입 개발 중입니다.<br>연락처를 남겨주시면 베타 테스트 모집, 펀딩 오픈, 제품 출시 소식을 먼저 안내해드릴게요!</span>
+        <span data-lang="en">Catnalytics is currently in prototype development.<br>Leave your contact and we will share beta testing, crowdfunding, and launch updates first.</span>
+      </p>
+      <ul class="contact-points">
+        <li data-lang="kr">제품 출시 및 크라우드 펀딩 오픈 알림</li>
+        <li data-lang="en">Launch and crowdfunding opening updates</li>
+        <li data-lang="kr">프로토타입 테스트 모집 시 우선 안내</li>
+        <li data-lang="en">Priority notice for prototype testing</li>
+        <li data-lang="kr">다묘 가정, 건강 모니터링 니즈 등 관심 내용 전달 가능</li>
+        <li data-lang="en">Share household details and health monitoring needs</li>
+      </ul>
+    </div>
+
+    <iframe name="googleFormTarget" id="googleFormTarget" style="display:none;"></iframe>
+    <form class="contact-form" id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLScjauLfBpJLi6j8RXwefEXclJsMDQVJKDlVvKUzGqCDnJSGFQ/formResponse" method="POST" target="googleFormTarget">
+      <input type="hidden" name="fvv" value="1">
+      <input type="hidden" name="partialResponse" value="[null,null,&quot;1014976226794368078&quot;]">
+      <input type="hidden" name="pageHistory" value="0">
+      <input type="hidden" name="fbzx" value="1014976226794368078">
+      <input type="hidden" name="submissionTimestamp" value="-1">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="contactName" data-lang="kr">이름</label>
+          <label for="contactName" data-lang="en">Name</label>
+          <input id="contactName" name="entry.808926565" type="text" autocomplete="name" required>
+        </div>
+        <div class="form-field">
+          <label for="contactCats" data-lang="kr">고양이 수</label>
+          <label for="contactCats" data-lang="en">Number of Cats</label>
+          <select id="contactCats" name="entry.1027810092">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="contactEmail" data-lang="kr">이메일</label>
+          <label for="contactEmail" data-lang="en">Email</label>
+          <input id="contactEmail" name="entry.1466627912" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label for="contactPhone" data-lang="kr">전화번호</label>
+          <label for="contactPhone" data-lang="en">Phone</label>
+          <input id="contactPhone" name="entry.1233363226" type="tel" autocomplete="tel">
+        </div>
+        <div class="form-field full">
+          <label for="contactInterest" data-lang="kr">관심 내용</label>
+          <label for="contactInterest" data-lang="en">Interest</label>
+          <textarea id="contactInterest" name="entry.1215597629"></textarea>
+        </div>
+      </div>
+      <button class="contact-submit" type="submit">
+        <span data-lang="kr">출시 알림 신청하기</span>
+        <span data-lang="en">Join the Waitlist</span>
+      </button>
+      <p class="contact-note">
+        <span data-lang="kr">입력한 연락처는 Catnalytics 사전 알림과 테스트 모집 안내 목적으로만 사용됩니다.</span>
+        <span data-lang="en">Your contact will only be used for Catnalytics early updates and testing notices.</span>
+      </p>
+    </form>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+  <div class="success-dialog">
+    <div class="success-icon" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h3 class="success-title" id="successTitle">
+      <span data-lang="kr">출시 알림 신청이 완료되었습니다</span>
+      <span data-lang="en">You are on the waitlist</span>
+    </h3>
+    <p class="success-message">
+      <span data-lang="kr">출시 소식과 베타 테스트 모집 안내를 먼저 전해드릴게요.</span>
+      <span data-lang="en">We will share launch news and beta testing updates first.</span>
+    </p>
+    <button class="success-close" id="successClose" type="button">
+      <span data-lang="kr">확인</span>
+      <span data-lang="en">Got it</span>
+    </button>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
@@ -1374,7 +1792,7 @@
   </div>
   <div class="footer-links">
     <a href="mailto:catnalytics@gmail.com">catnalytics@gmail.com</a>
-    <a href="https://instagram.com/catnalytics" target="_blank">@catnalytics</a>
+    <a href="https://instagram.com/catnalytics" target="_blank" rel="noopener">@catnalytics</a>
   </div>
 </footer>
 
@@ -1385,6 +1803,37 @@ function setLang(lang) {
   document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
   document.documentElement.lang = lang === 'en' ? 'en' : 'ko';
 }
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  const form = event.currentTarget;
+  const submitButton = form.querySelector('.contact-submit');
+  const modal = document.getElementById('successModal');
+
+  submitButton.disabled = true;
+  modal.classList.remove('visible');
+
+  window.setTimeout(function() {
+    form.reset();
+    submitButton.disabled = false;
+    modal.classList.add('visible');
+  }, 900);
+});
+
+document.getElementById('successClose').addEventListener('click', function() {
+  document.getElementById('successModal').classList.remove('visible');
+});
+
+document.getElementById('successModal').addEventListener('click', function(event) {
+  if (event.target === event.currentTarget) {
+    event.currentTarget.classList.remove('visible');
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    document.getElementById('successModal').classList.remove('visible');
+  }
+});
 </script>
 </body>
 </html>
