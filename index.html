@@ -1686,7 +1686,7 @@
 
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
-  <p class="section-tag" data-lang="kr">// 사전 연락처 등록</p>
+  <p class="section-tag" data-lang="kr">// 출시 알림 신청</p>
   <p class="section-tag" data-lang="en">// Early Access</p>
   <h2 class="section-title">
     <span data-lang="kr"><span class="kr">출시 소식을 가장 먼저 받아보세요</span></span>
@@ -1696,16 +1696,16 @@
   <div class="contact-layout">
     <div>
       <p class="section-desc" style="max-width:480px;">
-        <span data-lang="kr">Catnalytics는 현재 프로토타입 개발 중입니다.<br>연락처를 남겨주시면 베타 테스트 모집, 펀딩 오픈, 제품 출시 소식을 먼저 안내해드릴게요!</span>
-        <span data-lang="en">Catnalytics is currently in prototype development.<br>Leave your contact and we will share beta testing, crowdfunding, and launch updates first.</span>
+        <span data-lang="kr">Catnalytics는 현재 프로토타입 개발 중입니다.<br>이메일을 남겨주시면 베타 테스트 모집, 펀딩 오픈, 제품 출시 소식을 먼저 안내해드릴게요!</span>
+        <span data-lang="en">Catnalytics is currently in prototype development.<br>Leave your email and we will share beta testing, crowdfunding, and launch updates first.</span>
       </p>
       <ul class="contact-points">
         <li data-lang="kr">제품 출시 및 크라우드 펀딩 오픈 알림</li>
         <li data-lang="en">Launch and crowdfunding opening updates</li>
         <li data-lang="kr">프로토타입 테스트 모집 시 우선 안내</li>
         <li data-lang="en">Priority notice for prototype testing</li>
-        <li data-lang="kr">다묘 가정, 건강 모니터링 니즈 등 관심 내용 전달 가능</li>
-        <li data-lang="en">Share household details and health monitoring needs</li>
+        <li data-lang="kr">고양이 수에 맞춘 베타 테스트 안내</li>
+        <li data-lang="en">Beta testing updates based on household size</li>
       </ul>
     </div>
 
@@ -1717,35 +1717,26 @@
       <input type="hidden" name="fbzx" value="1014976226794368078">
       <input type="hidden" name="submissionTimestamp" value="-1">
       <div class="form-grid">
-        <div class="form-field">
-          <label for="contactName" data-lang="kr">이름</label>
-          <label for="contactName" data-lang="en">Name</label>
-          <input id="contactName" name="entry.808926565" type="text" autocomplete="name" required>
-        </div>
-        <div class="form-field">
-          <label for="contactCats" data-lang="kr">고양이 수</label>
-          <label for="contactCats" data-lang="en">Number of Cats</label>
-          <select id="contactCats" name="entry.1027810092">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4+">4+</option>
-          </select>
-        </div>
-        <div class="form-field">
+        <div class="form-field full">
           <label for="contactEmail" data-lang="kr">이메일</label>
           <label for="contactEmail" data-lang="en">Email</label>
           <input id="contactEmail" name="entry.1466627912" type="email" autocomplete="email" required>
         </div>
         <div class="form-field">
-          <label for="contactPhone" data-lang="kr">전화번호</label>
-          <label for="contactPhone" data-lang="en">Phone</label>
-          <input id="contactPhone" name="entry.1233363226" type="tel" autocomplete="tel">
+          <label for="contactName" data-lang="kr">이름 (선택)</label>
+          <label for="contactName" data-lang="en">Name (Optional)</label>
+          <input id="contactName" name="entry.808926565" type="text" autocomplete="name">
         </div>
-        <div class="form-field full">
-          <label for="contactInterest" data-lang="kr">관심 내용</label>
-          <label for="contactInterest" data-lang="en">Interest</label>
-          <textarea id="contactInterest" name="entry.1215597629"></textarea>
+        <div class="form-field">
+          <label for="contactCats" data-lang="kr">고양이 수 (선택)</label>
+          <label for="contactCats" data-lang="en">Number of Cats (Optional)</label>
+          <select id="contactCats" name="entry.1027810092">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4+</option>
+          </select>
         </div>
       </div>
       <button class="contact-submit" type="submit">
@@ -1753,8 +1744,8 @@
         <span data-lang="en">Join the Waitlist</span>
       </button>
       <p class="contact-note">
-        <span data-lang="kr">입력한 연락처는 Catnalytics 사전 알림과 테스트 모집 안내 목적으로만 사용됩니다.</span>
-        <span data-lang="en">Your contact will only be used for Catnalytics early updates and testing notices.</span>
+        <span data-lang="kr">입력한 이메일은 Catnalytics 사전 알림과 테스트 모집 안내 목적으로만 사용됩니다.</span>
+        <span data-lang="en">Your email will only be used for Catnalytics early updates and testing notices.</span>
       </p>
     </form>
   </div>
