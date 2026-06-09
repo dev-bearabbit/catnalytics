@@ -971,6 +971,164 @@
     letter-spacing: 0.04em;
   }
 
+  .prototype-showcase {
+    margin-top: 44px;
+    border-top: 0.5px solid var(--border);
+    padding-top: 32px;
+  }
+
+  .prototype-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+
+  .prototype-kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--teal);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .prototype-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+
+  .prototype-copy {
+    max-width: 600px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    word-break: keep-all;
+    margin-top: 8px;
+  }
+
+  .prototype-viewport {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    cursor: grab;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .prototype-viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .prototype-viewport.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+  }
+
+  .prototype-track {
+    display: flex;
+    gap: 16px;
+  }
+
+  .prototype-slide {
+    min-width: calc((100% - 32px) / 3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg2);
+    scroll-snap-align: start;
+  }
+
+  .prototype-media {
+    position: relative;
+    height: 190px;
+    background: #080808;
+  }
+
+  .prototype-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .prototype-media.contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .prototype-media.contain img {
+    object-fit: contain;
+  }
+
+  .prototype-note {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .prototype-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--teal);
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .prototype-caption {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.45;
+    letter-spacing: 0;
+    word-break: keep-all;
+  }
+
+  .prototype-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-top: 12px;
+    word-break: keep-all;
+  }
+
+  .prototype-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 16px;
+  }
+
+  .prototype-dot {
+    width: 7px;
+    height: 7px;
+    border: none;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: width 0.2s, background 0.2s;
+  }
+
+  .prototype-dot.active {
+    width: 24px;
+    border-radius: 100px;
+    background: var(--teal);
+  }
+
   .founder-card {
     background: var(--bg2);
     border: 0.5px solid var(--border);
@@ -1158,6 +1316,19 @@
     .products-grid,
     .products-grid-4 { grid-template-columns: repeat(2, 1fr); }
     .about-grid { grid-template-columns: 1fr; }
+    .prototype-header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .prototype-slide {
+      min-width: calc((100% - 16px) / 2);
+    }
+    .prototype-media {
+      height: 180px;
+    }
+    .prototype-note {
+      padding: 20px;
+    }
     footer {
       align-items: flex-start;
       padding: 32px 20px;
@@ -1192,6 +1363,21 @@
     .products-grid,
     .products-grid-4 { grid-template-columns: 1fr; }
     .product-card { padding: 24px 20px; }
+    .prototype-showcase {
+      margin-top: 36px;
+      padding-top: 28px;
+    }
+    .prototype-title { font-size: 17px; }
+    .prototype-track {
+      gap: 12px;
+    }
+    .prototype-slide {
+      min-width: 82%;
+    }
+    .prototype-media {
+      height: 170px;
+    }
+    .prototype-caption { font-size: 14px; }
     .contact-form { padding: 24px 20px; }
     .form-grid { grid-template-columns: 1fr; }
   }
@@ -1689,6 +1875,88 @@
       </div>
     </div>
   </div>
+
+  <div class="prototype-showcase" aria-label="Prototype photos">
+    <div class="prototype-header">
+      <div>
+        <div class="prototype-kicker">Prototype in progress</div>
+        <h3 class="prototype-title">
+          <span data-lang="kr">실제 생활 환경에서 하나씩 검증하고 있습니다</span>
+          <span data-lang="en">Testing each piece in real home environments</span>
+        </h3>
+        <p class="prototype-copy">
+          <span data-lang="kr">실제 생활 환경에서 착용감, 측정 방식, 앱 화면을 하나씩 테스트하며 제품을 다듬고 있습니다.</span>
+          <span data-lang="en">We are refining the product by testing wearability, measurement methods, and app screens in real home environments.</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="prototype-viewport" id="prototypeViewport">
+      <div class="prototype-track" id="prototypeTrack">
+        <figure class="prototype-slide">
+          <div class="prototype-media">
+            <img src="cat_2.jpeg" alt="Cat wearing a BLE collar prototype">
+          </div>
+          <figcaption class="prototype-note">
+            <div class="prototype-label">BLE collar</div>
+            <div class="prototype-caption" data-lang="kr">고양이 개체 식별을 위한 BLE 목걸이 착용 테스트</div>
+            <div class="prototype-caption" data-lang="en">BLE collar test for identifying each cat</div>
+            <div class="prototype-detail" data-lang="kr">다묘 가정에서도 어느 고양이의 데이터인지 구분할 수 있도록 실제 착용감을 확인하고 있습니다.</div>
+            <div class="prototype-detail" data-lang="en">We are checking real wearability so data can be separated by cat in multi-cat homes.</div>
+          </figcaption>
+        </figure>
+        <figure class="prototype-slide">
+          <div class="prototype-media">
+            <img src="small_pad.jpeg" alt="Food and water pad prototype under a bowl stand">
+          </div>
+          <figcaption class="prototype-note">
+            <div class="prototype-label">Food pad</div>
+            <div class="prototype-caption" data-lang="kr">기존 식기 아래에서 동작하는 급식·급수 패드 프로토타입</div>
+            <div class="prototype-caption" data-lang="en">Food and water pad prototype working under existing bowls</div>
+            <div class="prototype-detail" data-lang="kr">보호자의 루틴을 바꾸지 않으면서 식사량과 음수량을 측정하는 방식을 테스트하고 있습니다.</div>
+            <div class="prototype-detail" data-lang="en">We are testing ways to measure food and water intake without changing the guardian's routine.</div>
+          </figcaption>
+        </figure>
+        <figure class="prototype-slide">
+          <div class="prototype-media">
+            <img src="large_pad.jpeg" alt="Litter box placed on a large pad prototype">
+          </div>
+          <figcaption class="prototype-note">
+            <div class="prototype-label">Litter pad</div>
+            <div class="prototype-caption" data-lang="kr">화장실 아래 설치를 가정한 대형 패드 테스트</div>
+            <div class="prototype-caption" data-lang="en">Large pad test designed for placement under a litter box</div>
+            <div class="prototype-detail" data-lang="kr">체중과 배변 이벤트를 생활 공간 안에서 자연스럽게 수집할 수 있는지 검증 중입니다.</div>
+            <div class="prototype-detail" data-lang="en">We are validating whether weight and litter events can be collected naturally in the home.</div>
+          </figcaption>
+        </figure>
+        <figure class="prototype-slide">
+          <div class="prototype-media contain">
+            <img src="app_1.png" alt="Catnalytics app prototype home and record screens">
+          </div>
+          <figcaption class="prototype-note">
+            <div class="prototype-label">App prototype</div>
+            <div class="prototype-caption" data-lang="kr">고양이별 건강 데이터를 확인하는 앱 화면</div>
+            <div class="prototype-caption" data-lang="en">App screens for each cat's health data</div>
+            <div class="prototype-detail" data-lang="kr">자동 수집 데이터와 수기 기록을 함께 관리할 수 있도록 앱 구조를 다듬고 있습니다.</div>
+            <div class="prototype-detail" data-lang="en">We are refining the app so automatic data and manual records can live together.</div>
+          </figcaption>
+        </figure>
+        <figure class="prototype-slide">
+          <div class="prototype-media contain">
+            <img src="app_2.png" alt="Catnalytics app prototype report screens">
+          </div>
+          <figcaption class="prototype-note">
+            <div class="prototype-label">Reports</div>
+            <div class="prototype-caption" data-lang="kr">일간·주간 리포트로 변화 흐름을 확인하는 화면</div>
+            <div class="prototype-caption" data-lang="en">Daily and weekly reports for understanding health trends</div>
+            <div class="prototype-detail" data-lang="kr">식사량, 음수량, 배변, 체중 변화가 보호자에게 이해 가능한 형태로 전달되도록 실험하고 있습니다.</div>
+            <div class="prototype-detail" data-lang="en">We are experimenting with ways to make food, water, litter, and weight trends easy to understand.</div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="prototype-dots" id="prototypeDots" aria-label="Prototype carousel navigation"></div>
+  </div>
 </section>
 
 <div class="divider"></div>
@@ -1802,6 +2070,94 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
   document.documentElement.lang = lang === 'en' ? 'en' : 'ko';
+}
+
+const prototypeTrack = document.getElementById('prototypeTrack');
+const prototypeSlides = prototypeTrack ? Array.from(prototypeTrack.children) : [];
+const prototypeViewport = document.getElementById('prototypeViewport');
+const prototypeDots = document.getElementById('prototypeDots');
+let prototypeIndex = 0;
+let prototypeDragStartX = 0;
+let prototypeScrollStartX = 0;
+let prototypeIsDragging = false;
+
+function getPrototypeStep() {
+  if (!prototypeTrack || !prototypeSlides.length) return 0;
+  const gap = parseFloat(window.getComputedStyle(prototypeTrack).columnGap) || 0;
+  return prototypeSlides[0].getBoundingClientRect().width + gap;
+}
+
+function updatePrototypeCarousel() {
+  if (!prototypeViewport || !prototypeDots) return;
+  const step = getPrototypeStep();
+  if (step > 0) {
+    prototypeIndex = Math.min(prototypeSlides.length - 1, Math.round(prototypeViewport.scrollLeft / step));
+  }
+  prototypeDots.querySelectorAll('.prototype-dot').forEach((dot, index) => {
+    dot.classList.toggle('active', index === prototypeIndex);
+    dot.setAttribute('aria-current', index === prototypeIndex ? 'true' : 'false');
+  });
+}
+
+function movePrototypeCarousel(direction) {
+  if (!prototypeViewport || !prototypeSlides.length) return;
+  prototypeIndex = (prototypeIndex + direction + prototypeSlides.length) % prototypeSlides.length;
+  prototypeViewport.scrollTo({
+    left: prototypeIndex * getPrototypeStep(),
+    behavior: 'smooth'
+  });
+}
+
+if (prototypeTrack && prototypeViewport && prototypeDots) {
+  prototypeSlides.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.className = 'prototype-dot';
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Show prototype image ${index + 1}`);
+    dot.addEventListener('click', () => {
+      prototypeIndex = index;
+      prototypeViewport.scrollTo({
+        left: prototypeIndex * getPrototypeStep(),
+        behavior: 'smooth'
+      });
+    });
+    prototypeDots.appendChild(dot);
+  });
+
+  prototypeViewport.addEventListener('scroll', () => {
+    window.requestAnimationFrame(updatePrototypeCarousel);
+  }, { passive: true });
+  prototypeViewport.addEventListener('pointerdown', (event) => {
+    prototypeIsDragging = true;
+    prototypeDragStartX = event.clientX;
+    prototypeScrollStartX = prototypeViewport.scrollLeft;
+    prototypeViewport.classList.add('dragging');
+    prototypeViewport.setPointerCapture(event.pointerId);
+  });
+  prototypeViewport.addEventListener('pointermove', (event) => {
+    if (!prototypeIsDragging) return;
+    prototypeViewport.scrollLeft = prototypeScrollStartX - (event.clientX - prototypeDragStartX);
+  });
+  prototypeViewport.addEventListener('pointerup', (event) => {
+    if (!prototypeIsDragging) return;
+    prototypeIsDragging = false;
+    prototypeViewport.classList.remove('dragging');
+    prototypeViewport.releasePointerCapture(event.pointerId);
+    const step = getPrototypeStep();
+    if (step > 0) {
+      prototypeIndex = Math.round(prototypeViewport.scrollLeft / step);
+      prototypeViewport.scrollTo({
+        left: prototypeIndex * step,
+        behavior: 'smooth'
+      });
+    }
+  });
+  prototypeViewport.addEventListener('pointercancel', () => {
+    prototypeIsDragging = false;
+    prototypeViewport.classList.remove('dragging');
+  });
+  window.addEventListener('resize', updatePrototypeCarousel);
+  updatePrototypeCarousel();
 }
 
 document.getElementById('contactForm').addEventListener('submit', function(event) {
