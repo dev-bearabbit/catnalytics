@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://catnalytics.app/sitemap.xml
+Sitemap: https://catnalytics.com/sitemap.xml
